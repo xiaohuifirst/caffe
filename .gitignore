@@ -81,6 +81,8 @@ distribute/*
 python/caffe/proto/
 cmake_build
 .cmake_build
+cmake-build-debug
+cmake-build-release
 
 # Generated documentation
 docs/_site

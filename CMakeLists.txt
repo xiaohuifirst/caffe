@@ -42,6 +42,8 @@ caffe_option(USE_LMDB "Build with lmdb" ON)
 caffe_option(ALLOW_LMDB_NOLOCK "Allow MDB_NOLOCK when reading LMDB files (only if necessary)" OFF)
 caffe_option(USE_OPENMP "Link with OpenMP (when your BLAS wants OpenMP and you get linker errors)" OFF)
 
+
+set(BLAS "open")    # cmake10.1版本太高，会找不到hdf5。。。，改用9以下版本都行!(第一次cmake BLAS变量设置会不成功，cmake两次即可)
 # ---[ Dependencies
 include(cmake/Dependencies.cmake)
 
