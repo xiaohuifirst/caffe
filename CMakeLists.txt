@@ -44,6 +44,17 @@ caffe_option(USE_OPENMP "Link with OpenMP (when your BLAS wants OpenMP and you g
 
 
 set(BLAS "open")    # cmake10.1版本太高，会找不到hdf5。。。，改用9以下版本都行!(第一次cmake BLAS变量设置会不成功，cmake两次即可)
+set(HDF5_INCLUDE_DIRS /usr/local/include)
+
+# ubuntu使用3.3.0版本，解决与原装2.6.1的冲突
+set(Protobuf_PROTOC_EXECUTABLE protoc)
+set(PROTOBUF_ROOT /usr/local/protobuf-3.3.0)
+set(Protobuf_INCLUDE_DIR ${PROTOBUF_ROOT}/include)
+set(Protobuf_LIBRARY ${PROTOBUF_ROOT}/lib)
+include_directories(${PROTOBUF_ROOT}/include)
+link_directories(${PROTOBUF_ROOT}/lib)
+
+find_package(Protobuf REQUIRED)
 # ---[ Dependencies
 include(cmake/Dependencies.cmake)
 

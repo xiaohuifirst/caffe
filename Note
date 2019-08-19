@@ -1,2 +1,4 @@
 environment: ubuntu16.04
 此工程仅供代码阅读学习使用，开发使用直接使用根目录的Makefile.config以及Makefile生成的动态链接库。
+
+Note: cmake 版本不能高过9,否则hdf5会报找不到头文件目录
